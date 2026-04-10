@@ -1,1 +1,1 @@
-# RomesHome is my website that was inspired and cloned by https://github.com/iiDk-the-actual/crimsoncauldron.dev
+# RomesHome is my website i clam full ownership to conntact me my discord is zilo_fr or zilo_fr1
