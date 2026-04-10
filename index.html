@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romes Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            background: black;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* BACKGROUND */
+        video {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.35;
+        }
+
+        /* CARD */
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(10,10,10,0.75);
+            padding: 25px;
+            border-radius: 18px;
+            width: 380px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .profile {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        p {
+            opacity: 0.8;
+        }
+
+        /* 🌈 RAINBOW */
+        .rainbow {
+            font-weight: bold;
+            background: linear-gradient( 90deg, red, orange, yellow, green, cyan, blue, violet, red );
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowMove 4s linear infinite;
+        }
+
+        /* ⚫⚪ BLACK & WHITE NEON */
+        .neonbw {
+            font-weight: bold;
+            background: linear-gradient(90deg, black, white, gray, white, black);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: bwMove 2.5s linear infinite;
+            text-shadow: 0 0 6px rgba(255,255,255,0.5);
+        }
+
+        @keyframes rainbowMove {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 400%
+            }
+        }
+
+        @keyframes bwMove {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 300%
+            }
+        }
+
+        /* SLIDER */
+        .slider-box {
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        /* SCROLL */
+        .scroll {
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .track {
+            display: flex;
+            width: max-content;
+            animation: scroll 25s linear infinite;
+        }
+
+        .person {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 90px;
+            padding: 10px 14px;
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+        }
+
+        .badge {
+            width: 14px;
+            height: 14px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* START */
+        #start {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            z-index: 10;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="start">Click anywhere to start</div>
+
+    <video autoplay loop muted>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- CARD -->
+    <div class="card">
+        <img class="profile" src="profile.png">
+        <h1>Romes Home</h1>
+        <p>A place of Kindness</p>
+
+        <div class="slider-box">
+            <label>Music Volume</label>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.3">
+        </div>
+    </div>
+
+    <!-- SCROLL -->
+    <div class="scroll">
+        <div class="track">
+
+            <!-- RAINBOW -->
+            <div class="person"><b class="rainbow">Zilo</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b class="rainbow">Rome</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b class="rainbow">iidk</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+
+            <!-- BLACK & WHITE NEON -->
+            <div class="person"><b class="neonbw">Kozutoh</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b class="neonbw">Lack</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b class="neonbw">Solar</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+
+            <!-- NORMAL -->
+            <div class="person"><b>Horizon</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b>Jetto</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b>quiz</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b>Nomelo</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+            <div class="person"><b>Melo</b><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg"></div>
+
+        </div>
+    </div>
+
+    <script>
+        const start = document.getElementById("start");
+        const music = document.getElementById("music");
+        const volume = document.getElementById("volume");
+
+        start.addEventListener("click", () => {
+            music.volume = volume.value;
+            music.play();
+            start.style.display = "none";
+        });
+
+        volume.addEventListener("input", () => {
+            music.volume = volume.value;
+        });
+    </script>
+
+</body>
+</html>
